@@ -7,8 +7,8 @@ model_path = os.path.join(os.getcwd(), "best.onnx")  # Gets full path
 session = ort.InferenceSession(model_path, providers=["CPUExecutionProvider"])
 
 # Đọc ảnh
-def Image_read(image_path):
-    image = cv2.imread(image_path)
+def Image_read(image_arr):
+    image =  cv2.imdecode(image_arr, cv2.IMREAD_COLOR) 
     h, w, _ = image.shape
 
     return [image, h, w]
