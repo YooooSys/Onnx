@@ -9,6 +9,7 @@ session = ort.InferenceSession(model_path, providers=["CPUExecutionProvider"])
 # Đọc ảnh
 def Image_read(image_arr):
     image =  cv2.imdecode(image_arr, cv2.IMREAD_COLOR) 
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     h, w, _ = image.shape
 
     return [image, h, w]
