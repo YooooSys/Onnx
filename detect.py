@@ -1,9 +1,10 @@
 import cv2
 import numpy as np
 import onnxruntime as ort
+import os
 
-# Load mô hình YOLOv8
-session = ort.InferenceSession("best.onnx", providers=["CPUExecutionProvider"])
+model_path = os.path.join(os.getcwd(), "best.onnx")  # Gets full path
+session = ort.InferenceSession(model_path, providers=["CPUExecutionProvider"])
 
 # Đọc ảnh
 def Image_read(image_path):
