@@ -11,7 +11,7 @@ if st.button("Digit Recognition using contour"):
     if uploaded_file is not None:
         uploaded_file = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
 
-        image, h, w = (Image_read(uploaded_file)[x] for x in range[3])
+        image, h, w = (Image_read(uploaded_file)[x] for x in range(3))
         image_tensor = Preproccess_image(image)
 
         image_out = Detect(session, image_tensor, h, w)
