@@ -21,7 +21,7 @@ def Preproccess_image(image):
     return image_tensor
 
 # Dự đoán bounding boxes
-def Detect(session, image_tensor, h, w):
+def Detect(image, session, image_tensor, h, w):
     outputs = session.run(None, {session.get_inputs()[0].name: image_tensor})[0].squeeze()
     x_c, y_c, w_b, h_b, scores = outputs
 
