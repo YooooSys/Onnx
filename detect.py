@@ -40,6 +40,5 @@ def Detect(image, session, image_tensor, h, w):
 
     # Hiển thị ảnh kết quả
 
-    image = cv2.resize(image, (540, 960))
 
     return image
