@@ -6,7 +6,7 @@ st.title("Onnx testing")
 
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
-if st.button("Digit Recognition using contour"):
+if st.button("Student's ID recognition"):
 
     if uploaded_file is not None:
 
